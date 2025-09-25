@@ -1,0 +1,31 @@
+version: '3.3'
+
+services:
+  db:
+    image: mysql:latest
+    container_name: keuangan-db
+    environment:
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_DATABASE:
+      MYSQL_USER:
+      MYSQL_PASSWORD:
+    volumes:
+      - keuangan_db:/var/lib/mysql
+    networks:
+      - mynet
+
+  web:
+    build: .
+    container_name: keuangan-app
+    ports:
+      - "3003:80"
+    depends_on:
+      - db
+    networks:
+      - mynet
+
+volumes:
+  keuangan_db:
+
+networks:
+  mynet:
