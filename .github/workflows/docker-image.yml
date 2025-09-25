@@ -45,4 +45,4 @@ jobs:
           cd /var/www/html
           git pull origin main
           docker-compose up -d --build
-          docker exec keuangan-db mysql -u user -p123 -h127.0.0.1 -e "use keuangan; insert into keuangan.transaksi(id,keterangan,jumlah,tipe) values (01,'Gaji',500000,'pemasukan');" keuangan
+          docker exec keuangan-db mysql -u user -p123 -h127.0.0.1 -e "use keuangan; create table transaksi(id int, keterangan varchar(50), jumlah varchar(50), tipe varchar(50)); insert into keuangan.transaksi(id,keterangan,jumlah,tipe) values (01,'Gaji',500000,'pemasukan');" keuangan
