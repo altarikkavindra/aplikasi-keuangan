@@ -5,10 +5,10 @@ services:
     image: mysql:latest
     container_name: keuangan-db
     environment:
-      MYSQL_ROOT_PASSWORD:
-      MYSQL_DATABASE:
-      MYSQL_USER:
-      MYSQL_PASSWORD:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_DATABASE: keuangan
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 123
     volumes:
       - keuangan_db:/var/lib/mysql
     networks:
